@@ -96,10 +96,10 @@ fun FloatingForm(
                     size = size.trim()
 
                     // Convert to Int
-                    val type: Int = if (type.isNotEmpty()) type.toInt() else -1
-                    val points: Int = if (points.isNotEmpty()) points.toInt() else -1
-                    val size: Int = if (size.isNotEmpty()) size.toInt() else -1
-                    viewModel.addBottle(state.value.barCode, type, points, size)
+                    val bottleType: Int = if (type.isNotEmpty()) type.toInt() else -1
+                    val bottlePoints: Int = if (points.isNotEmpty()) points.toInt() else -1
+                    val bottleSize: Int = if (size.isNotEmpty()) size.toInt() else -1
+                    viewModel.addBottle(state.value.barCode, bottleType, bottlePoints, bottleSize)
 
                     viewModel.closeDialog()
                 }) {
