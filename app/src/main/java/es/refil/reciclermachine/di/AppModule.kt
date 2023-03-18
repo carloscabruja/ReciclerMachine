@@ -86,6 +86,7 @@ object AppModule {
             .build()
     }
 
+    /** Repositories */
     @Provides
     fun provideCameraRepository(
         scanner: GmsBarcodeScanner,
@@ -108,6 +109,7 @@ object AppModule {
         bottlesRef: CollectionReference
     ): BottlesRepository = BottlesRepositoryImpl(bottlesRef)
 
+    /** Use Cases */
     @Provides
     fun provideUseCases(
         CameraRepository: CameraRepository,

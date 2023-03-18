@@ -65,7 +65,7 @@ class BottlesViewModel @Inject constructor(
         )
     }
 
-    fun closeCamera() {
+    private fun closeCamera() {
         _state.value = state.value.copy(
             isCameraVisible = false
         )
@@ -85,12 +85,14 @@ class BottlesViewModel @Inject constructor(
                     imageUriDetected = it
                 )
             } else {
-                Toast.makeText(context, "No se ha podido guardar la imagen", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(
+                    context,
+                    "No se ha podido guardar la imagen",
+                    Toast.LENGTH_SHORT
+                ).show()
             }.also {
                 closeCamera()
             }
         }
-
     }
 }
